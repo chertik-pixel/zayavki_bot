@@ -1,0 +1,4 @@
+venv/
+.env
+zayavki.csv
+__pycache__/
