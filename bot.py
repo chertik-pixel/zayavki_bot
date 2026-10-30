@@ -71,13 +71,10 @@ class Form(StatesGroup):
     service = State()
 
 
-@dp.message(CommandStart())
+@dp.message(CommandStart()) 
 async def start(message: Message, state: FSMContext):
     await state.clear()
-    await message.answer(
-        f"Привет, {message.from_user.first_name}! Выбери, что тебя интересует:",
-        reply_markup=menu,
-    )
+    await message.answer("Здравствуйте! Выберите, что вас интересует:", reply_markup=menu)
 
 
 @dp.message(Command("id"))
